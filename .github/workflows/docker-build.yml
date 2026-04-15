@@ -46,9 +46,9 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=raw,value={{ target }}-${{ matrix.arch }}
-            type=sha,prefix={{ target }}-${{ matrix.arch }}-
-            type=raw,value={{ target }}-${{ matrix.arch }}-latest,enable=${{ matrix.arch == 'amd64' }}
+            type=raw,value=${{ matrix.target }}-${{ matrix.arch }}
+            type=sha,prefix=${{ matrix.target }}-${{ matrix.arch }}-
+            type=raw,value=${{ matrix.target }}-${{ matrix.arch }}-latest,enable=${{ matrix.arch == 'amd64' }}
 
       - name: Build and push
         uses: docker/build-push-action@v6
