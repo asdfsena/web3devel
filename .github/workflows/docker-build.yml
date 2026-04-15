@@ -45,6 +45,11 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          labels: |
+            org.opencontainers.image.licenses=MIT
+            org.opencontainers.image.vendor=Aryasena Putra
+            org.opencontainers.image.authors=Aryasena Putra <sena@lichtlabs.org>
+            org.opencontainers.image.source=https://github.com/asdfsena/web3devel
           tags: |
             type=raw,value=${{ matrix.target }}-${{ matrix.arch }}
             type=sha,prefix=${{ matrix.target }}-${{ matrix.arch }}-
